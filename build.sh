@@ -1,9 +1,15 @@
 #!/bin/bash
 
-if !(which xchelper >/dev/null); then
-  echo "Installing xchelper"
-  # sh -c "$(curl -fsSL https://raw.githubusercontent.com/BlueIntent/xchelper/main/scripts/install.sh)"
+if !(which btormc >/dev/null); then
+  echo "Installing btormc"
+  git clone https://github.com/boolector/boolector 
+  cd boolector
+  ./contrib/setup-lingeling.sh
+  ./contrib/setup-btor2tools.sh
+  ./configure.sh && cd build && make
+  rsync -r ./bin/* /usr/local/bin
   echo "Done!"
+  btormc -h
 fi
 
 # xchelper $1
