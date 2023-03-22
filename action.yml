@@ -1,7 +1,8 @@
 name: 'Setup Btormc'
 description: 'Tool for install Btormc env'
-Icon: box
-Color: blue
+branding:
+  icon: 'message-circle'
+  color: 'red'
 # inputs:
 #   action:  # action
 #     description: 'automate tedious tasks'
